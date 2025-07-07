@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './SignIn.css'; // Reusing the same CSS file
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+
+  const navigate = useNavigate();
+
   // Form state
   const [formData, setFormData] = useState({
     username: '',
@@ -63,15 +67,13 @@ function Register() {
     
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
       // Handle successful registration here
       console.log('Registration successful:', formData);
       
       // Reset form
       setFormData({ username: '', email: '', password: '' });
       setIsSubmitted(false);
+      navigate('/chatbot');
       
     } catch (error) {
       console.error('Registration error:', error);

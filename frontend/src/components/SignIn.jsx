@@ -47,33 +47,26 @@ function SignIn() {
 
   // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    
-    if (!validateForm()) {
-      return;
-    }
-    
-    
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Handle successful login here
-      console.log('Login successful:', formData);
-      
-      // Reset form
-      setFormData({ email: '', password: '' });
-      setIsSubmitted(false);
-      
-      // Redirect to chatbot page
-      navigate('/chatbot');
-      
-    } catch (error) {
-      console.error('Login error:', error);
-      setIsSubmitted(false); // Reset submission state on error
-    }
-  };
+  e.preventDefault();
+  setIsSubmitted(true);
+
+  if (!validateForm()) {
+    return;
+  }
+
+  try {
+    // Directly handle success logic without artificial delay
+    console.log('Login successful:', formData);
+
+    setFormData({ email: '', password: '' });
+    setIsSubmitted(false);
+
+    navigate('/chatbot');
+  } catch (error) {
+    console.error('Login error:', error);
+    setIsSubmitted(false);
+  }
+};
 
   return (
     <div className="signin-container">
