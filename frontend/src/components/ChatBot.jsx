@@ -41,6 +41,8 @@ function ChatBot() {
     } catch (error) {
       console.error(error);
       const errorMessage = { text: 'Sorry, I\'m having trouble connecting right now. Please try again.', sender: 'bot' };
+      //Hugging face // several models // try to integrate them here TASK FOR DAY-2
+      
       setMessages(prev => [...prev, errorMessage]);
     }
     setLoading(false);
@@ -79,7 +81,7 @@ function ChatBot() {
               </svg>
             </div>
             <div className="header-info">
-              <h1 className="chatbot-title">Gemini Assistant</h1>
+              <h1 className="chatbot-title">AI Assistant</h1>
               <p className="chatbot-subtitle">AI-powered conversation</p>
             </div>
           </div>
