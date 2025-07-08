@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from chatbot.hf_models import run_model  # AI logic using Gemini
+from chatbot.hf_model import run_model  # AI logic using Gemini
 
 app = Flask(__name__)
 CORS(app)
