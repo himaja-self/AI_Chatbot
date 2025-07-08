@@ -1,14 +1,14 @@
 from huggingface_hub import InferenceClient
-import os
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
+token = os.getenv("HF_TOKEN")
 
-mistral_token = os.getenv("HF_TOKEN")
 
 client = InferenceClient(
     provider = "novita",
-    api_key= mistral_token,
+    api_key= token,
 )
 
 def run_model(user_input):
